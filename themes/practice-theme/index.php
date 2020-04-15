@@ -499,12 +499,7 @@
 
 
     <div id="gotoTop" class="icon-angle-up"></div>
-
-
-    <script src="js/jquery.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/functions.js"></script>
-
+    <?php wp_footer(); ?>
 </body>
 
 </html>
