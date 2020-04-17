@@ -71,115 +71,16 @@
                 <nav id="primary-menu" class="style-2">
                     <div class="container clearfix">
                         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-                        <ul>
-                            <li><a href="#">
-                                    <div>Menu Item 1</div>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <div>Submenu Item 1</div>
-                                        </a>
-                                        <ul>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 1</div>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 2</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">
-                                            <div>Submenu Item 2</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#">
-                                    <div>Menu Item 2</div>
-                                </a>
-                                <ul>
-                                    <li><a href="#">
-                                            <div>Submenu Item 1</div>
-                                        </a>
-                                        <ul>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 1</div>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 2</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">
-                                            <div>Submenu Item 2</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#">
-                                    <div>Menu Item 3</div>
-                                </a>
-                                <ul>
-                                    <li><a href="#">
-                                            <div>Submenu Item 1</div>
-                                        </a>
-                                        <ul>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 1</div>
-                                                </a>
-                                                <ul>
-                                                    <li><a href="#">
-                                                            <div>Submenu Item 1</div>
-                                                        </a>
-                                                    </li>
-                                                    <li><a href="#">
-                                                            <div>Submenu Item 2</div>
-                                                        </a>
-                                                    </li>
-                                                    <li><a href="#">
-                                                            <div>Submenu Item 3</div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 2</div>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 3</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">
-                                            <div>Submenu Item 2</div>
-                                        </a>
-                                        <ul>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 1</div>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <div>Submenu Item 2</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">
-                                            <div>Submenu Item 3</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Menu Item 4</a>
-                            </li>
-                        </ul>
+                        <?php
+                        if (has_nav_menu('primary')) {
+                            wp_nav_menu([
+                                'theme_location' => 'primary',
+                                'container'      => false,
+                                'fallback-cb'    => false,
+                                'depth'          => 4
+                            ]);
+                        }
+                        ?>
                         <div id="top-cart">
                             <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
                             <div class="top-cart-content">
