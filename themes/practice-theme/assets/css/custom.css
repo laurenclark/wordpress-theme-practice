@@ -27,3 +27,8 @@
 .sidebar-widgets-wrap {
     list-style: none;
 }
+
+/* CSS WIDGETS */
+#wp-calendar {
+    width: 100%;
+}
