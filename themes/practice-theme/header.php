@@ -6,7 +6,7 @@
     <title>Index Template</title>
 </head>
 
-<body class="stretched no-transition">
+<body <?php body_class('stretched', 'no-transition') ?>>
     <div id="wrapper" class="clearfix">
         <div id="top-bar" class="dark">
             <div class="container clearfix">
