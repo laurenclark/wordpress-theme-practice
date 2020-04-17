@@ -77,7 +77,8 @@
                                 'theme_location' => 'primary',
                                 'container'      => false,
                                 'fallback-cb'    => false,
-                                'depth'          => 4
+                                'depth'          => 4,
+                                'walker'         => new LC_Custom_Nav_Walker()
                             ]);
                         }
                         ?>
