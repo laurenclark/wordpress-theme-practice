@@ -8,7 +8,9 @@
     </div>
     <div class="entry-title">
         <h2>
-            <?php the_title() ?>
+            <a href="<?php the_permalink() ?>">
+                <?php the_title() ?>
+            </a>
         </h2>
     </div>
     <ul class="entry-meta clearfix">
@@ -38,6 +40,6 @@
             rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat
             atque vitae voluptatem libero at eveniet veritatis ab facere.
         </p>
-        <a href="#" class="more-link">Read More</a>
+        <a href="<?php the_permalink() ?>" class="more-link">Read More</a>
     </div>
 </div>
