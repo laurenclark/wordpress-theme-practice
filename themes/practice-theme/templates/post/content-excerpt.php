@@ -1,7 +1,9 @@
 <div class="entry clearfix">
     <div class="entry-image">
         <a href="#">
-            <img class="image_fade" src="images/blog/standard/17.jpg">
+            <!-- Echo out the thumbnail as an image elem -->
+            <!-- The second param is a list of attr you want to override and the new val -->
+            <?php the_post_thumbnail('full', ['class' => 'image_fade']); ?>
         </a>
     </div>
     <div class="entry-title">
