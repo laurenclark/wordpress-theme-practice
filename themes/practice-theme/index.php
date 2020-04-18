@@ -39,49 +39,18 @@ get_header();
         <div class="container clearfix">
             <div class="postcontent nobottommargin clearfix">
                 <div id="posts">
-                    <div class="entry clearfix">
-                        <div class="entry-image">
-                            <a href="#">
-                                <img class="image_fade" src="images/blog/standard/17.jpg">
-                            </a>
-                        </div>
-                        <div class="entry-title">
-                            <h2>
-                                <a href="single.html">
-                                    This is a Standard post with a Preview Image
-                                </a>
-                            </h2>
-                        </div>
-                        <ul class="entry-meta clearfix">
-                            <li><i class="icon-calendar3"></i> 10th February 2014</li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-user"></i>
-                                    admin
-                                </a>
-                            </li>
-                            <li>
-                                <i class="icon-folder-open"></i>
-                                <a href="#">General</a>, <a href="#">Media</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-comments"></i>
-                                    13 Comments
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="entry-content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
-                                asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est
-                                quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis
-                                rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat
-                                atque vitae voluptatem libero at eveniet veritatis ab facere.
-                            </p>
-                            <a href="#" class="more-link">Read More</a>
-                        </div>
-                    </div>
+                    <?php
+
+                    if (have_posts()) { // Reads the URI to see if any posts belong on the page
+                        while (have_posts()) {
+                            // Queries database for the current post, and then checks if there are
+                            // any more posts, this will return false if there is no next post
+                            the_post();
+                            get_template_part('templates/post/content', 'excerpt');
+                        }
+                    }
+                    ?>
+
                 </div>
                 <div class="row mb-3">
                     <div class="col-12">
