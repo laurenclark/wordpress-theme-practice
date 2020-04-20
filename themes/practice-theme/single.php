@@ -64,7 +64,12 @@
                                 ?>
 
                                 <div class="entry-content notopmargin">
-                                    <?php the_content(); ?>
+                                    <?php
+                                    the_content();
+
+                                    wp_link_pages();
+
+                                    ?>
 
                                     <div class="tagcloud clearfix bottommargin">
                                         <?php the_tags('', ' '); ?>
