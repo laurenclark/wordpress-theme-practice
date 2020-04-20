@@ -67,7 +67,12 @@
                                     <?php
                                     the_content();
 
-                                    wp_link_pages();
+                                    $link_pages_config = array(
+                                        'before'    => '<p class="text-center">' . __('Pages:', 'practice_theme'),
+                                        'after'     => '</p>'
+                                    );
+
+                                    wp_link_pages($link_pages_config);
 
                                     ?>
 
@@ -82,13 +87,11 @@
 
                             <div class="post-navigation clearfix">
                                 <div class="col_half nobottommargin">
-                                    <a href="#">&lArr; This is a Standard post with
-                                        a Slider Gallery</a>
+                                    <?php previous_post_link(); ?>
                                 </div>
 
                                 <div class="col_half col_last tright nobottommargin">
-                                    <a href="#">This is an Embedded Audio Post
-                                        &rArr;</a>
+                                    <?php next_post_link(); ?>
                                 </div>
                             </div>
 
