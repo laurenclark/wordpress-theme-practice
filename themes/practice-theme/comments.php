@@ -7,45 +7,56 @@ if (post_password_required()) {
 ?>
 
 <div id="comments" class="clearfix">
-    <h3 id="comments-title">
-        <span>3</span> Comments
-    </h3>
 
-    <ol class="commentlist clearfix">
-        <li class="comment even thread-even depth-1" id="li-comment-1">
-            <div id="comment-1" class="comment-wrap clearfix">
-                <div class="comment-meta">
-                    <div class="comment-author vcard">
-                        <span class="comment-avatar clearfix">
-                            <img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60" class="avatar avatar-60 photo avatar-default" height="60" width="60" />
-                        </span>
+    <?php
+
+    if (have_comments()) {
+    ?>
+
+        <h3 id="comments-title">
+            <span><?php comments_number(); ?></span>
+        </h3>
+
+        <ol class="commentlist clearfix">
+            <?php
+            foreach ($comments as $comment) {
+            ?>
+                <li class="comment even thread-even depth-1" id="li-comment-1">
+                    <div id="comment-1" class="comment-wrap clearfix">
+                        <div class="comment-meta">
+                            <div class="comment-author vcard">
+                                <span class="comment-avatar clearfix">
+                                    <!-- Pass in the $comment object so that WP can find the ID. -->
+                                    <!-- Params => Obj, Size, Default Img, Alt, Options -->
+                                    <?php echo get_avatar($comment, 60, "", "", ['class' => 'avatar avatar-60 photo avatar-default']); ?>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="comment-content clearfix">
+                            <div class="comment-author">
+                                <?php comment_author(); ?>
+                                <span><?php comment_date(); ?></span>
+                            </div>
+
+                            <?php comment_text(); ?>
+                        </div>
+
+                        <div class="clear"></div>
                     </div>
-                </div>
+                </li>
+            <?php
+            }
+            the_comments_pagination();
+            ?>
 
-                <div class="comment-content clearfix">
-                    <div class="comment-author">
-                        John Doe
-                        <span>April 24, 2012 at
-                            10:46 am</span>
-                    </div>
+        </ol>
 
-                    <p>
-                        Donec sed odio dui.
-                        Nulla vitae elit libero,
-                        a pharetra augue. Nullam
-                        id dolor id nibh
-                        ultricies vehicula ut id
-                        elit. Integer posuere
-                        erat a ante venenatis
-                        dapibus posuere velit
-                        aliquet.
-                    </p>
-                </div>
+    <?php
+    }
+    ?>
 
-                <div class="clear"></div>
-            </div>
-        </li>
-    </ol>
+
 
 
     <div class="clear"></div>
