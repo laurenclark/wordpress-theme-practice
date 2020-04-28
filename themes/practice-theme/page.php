@@ -7,7 +7,13 @@ while (have_posts()) {
     <section id="page-title">
         <div class="container clearfix">
             <h1><?php the_title(); ?></h1>
-            <span><?php the_subtitle(); ?></span>
+            <span>
+                <?php
+                if (function_exists('the_subtitle')) {
+                    the_subtitle();
+                }
+                ?>
+            </span>
         </div>
     </section>
 <?php
