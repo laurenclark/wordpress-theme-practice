@@ -177,6 +177,7 @@
                                         </div>
                                 <?php
                                     }
+                                    // Restore the $post global to the current post in the main query
                                     wp_reset_postdata();
                                 }
                                 ?>
