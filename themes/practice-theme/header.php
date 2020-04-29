@@ -3,7 +3,8 @@
 
 <head>
     <?php wp_head(); ?>
-    <title>Index Template</title>
+    <title><?php the_title(); ?>
+    </title>
 </head>
 
 <body <?php body_class('stretched', 'no-transition') ?>>
@@ -60,7 +61,8 @@
         <header id="header" class="sticky-style-2">
             <div class="container clearfix">
                 <div id="logo">
-                    <a href="#" class="standard-logo">Udemy</a>
+                    <a href="#" class="standard-logo"><?php echo get_bloginfo('name'); ?>
+                    </a>
                 </div>
                 <div class="top-advert">
                     <img src="images/magazine/ad.jpg">

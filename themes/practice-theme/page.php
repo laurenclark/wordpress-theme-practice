@@ -1,21 +1,22 @@
 <?php get_header(); ?>
 
 
+<?php if (single_post_title()) {; ?>
 
-<section id="page-title">
-    <div class="container clearfix">
-        <h1><?php single_post_title(); ?></h1>
-        <span>
-            <?php
-            if (function_exists('the_subtitle')) {
-                the_subtitle();
-            }
-            ?>
-        </span>
-    </div>
-</section>
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1><?php single_post_title(); ?></h1>
+            <span>
+                <?php
+                if (function_exists('the_subtitle')) {
+                    the_subtitle();
+                }
+                ?>
+            </span>
+        </div>
+    </section>
 
-
+<?php } ?>
 
 <section id="content">
     <div class="content-wrap">
